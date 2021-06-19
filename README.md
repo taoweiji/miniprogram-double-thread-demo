@@ -6,7 +6,7 @@
 
 我最近也在研究相关的小程序技术，也开源了一个JS引擎相关的框架 [quickjs-android](https://github.com/taoweiji/quickjs-android)。小程序的[ Page ](https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html)的设计和[ Vue.js ](https://cn.vuejs.org/v2/guide/index.html)很相似，所以使用  quickjs-android 和 Vue.js 模仿微信小程序的双线程架构，实现状态更新和事件触发。
 
-xxxx gif
+![](https://upload-images.jianshu.io/upload_images/2431302-b3d97a4e6fac27b4.gif?imageMogr2/auto-orient/strip)
 
 ### 框架分析
 #### Page
@@ -258,6 +258,34 @@ framework/webview.html
 </body>
 </html>
 ```
+
+### 示例
+逻辑层代码
+```
+Page({
+    data: {
+        counter: 0
+    },
+    onMinusClick: function () {
+        this.setData({ counter: this.data.counter - 1 })
+    },
+    onAddClick: function () {
+        this.setData({ counter: this.data.counter + 1 })
+    }
+});
+```
+页面
+```
+<div>
+  {{ counter }}
+  <div style="margin-top: 20px;">
+    <button v-on:click="onMinusClick">-</button>
+    <button v-on:click="onAddClick">+</button>
+  </div>
+</div>
+```
+
+
 ### Demo 完整代码
 [https://github.com/taoweiji/miniprogram-double-thread-demo](https://github.com/taoweiji/miniprogram-double-thread-demo)
 
