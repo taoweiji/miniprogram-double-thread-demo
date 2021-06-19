@@ -1,6 +1,6 @@
 Page({
     data: {
-        counter: 1024
+        counter: 0
     },
 
     onMinusClick: function () {
