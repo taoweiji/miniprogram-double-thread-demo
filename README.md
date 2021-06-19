@@ -284,11 +284,9 @@ Page({
   </div>
 </div>
 ```
+### 总结
+本篇文章只是简单通过 [quickjs-android](https://github.com/taoweiji/quickjs-android) 和[ Vue.js ](https://cn.vuejs.org/v2/guide/index.html) 去模仿微信小程序，实现一个简单的双线程架构。实际上微信的逻辑层和渲染层的架构要复杂很多，因为微信小程序的页面并不是使用标准的HTML，而是自定义的 [WXML](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/) 和 [WXS](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/)，css 也使用了 [WXSS](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html) 代替，渲染层的工作还很多。 [WXS](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/) 是微信小程序用于渲染层的脚本语言，语法规范类似JavaScript，但是不完全兼容，这个脚本的作用是为了解决双线程的线程切换带来的性能问题，因为这个脚本是运行在渲染层。而这个demo的渲染层是使用标准的 HTML 和 Vue.js 实现的。
 
 
 ### Demo 完整代码
 [https://github.com/taoweiji/miniprogram-double-thread-demo](https://github.com/taoweiji/miniprogram-double-thread-demo)
-
-
-
-
